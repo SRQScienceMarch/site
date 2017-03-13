@@ -8,7 +8,7 @@ var Email = require('./models/email');
 var port    = process.env.PORT || 8080 // setting port
 var morgan  = require('morgan'); //for logging
 
-mongoose.connect('mongodb://localhost/srq_science')
+mongoose.connect(process.env.MONGODB_URI);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
